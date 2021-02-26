@@ -39,10 +39,15 @@ export function ViewDetails({navigation}) {
           justifyContent: 'center',
           alignSelf: 'center',
         }}>
-        <TouchableOpacity
-          onPress={() =>
-            navigation.navigate('AddDetails', {item: item, details: details})
-          }
+        <View
+        
+          /**
+           * 
+           onPress={() =>
+             navigation.navigate('AddDetails', {item: item, details: details})
+           }
+           */
+        
           style={{
             width: width * 0.9,
             height: height * 0.22,
@@ -178,7 +183,7 @@ export function ViewDetails({navigation}) {
             </View>
           </View>
           
-      </TouchableOpacity>
+      </View>
       </View>
       
     );
