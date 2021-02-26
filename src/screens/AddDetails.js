@@ -11,10 +11,12 @@ import {
   ImageBackground,
   FlatList,
 } from 'react-native';
+import moment from 'moment'
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {Icon} from 'react-native-elements';
 import ImagePicker from 'react-native-image-crop-picker';
 import {TakeHolidayContext} from './context';
+import DateTimePickerModal from "react-native-modal-datetime-picker";
 
 
 const {height, width} = Dimensions.get('window');
@@ -30,11 +32,24 @@ export function AddDetails({navigation, route}) {
     information: '',
     image: '',
   });
+  const [isDatePickerVisible, setDatePickerVisibility] = React.useState(false);
   React.useEffect(() => {
     if (item) {
       setFormState(item);
     }
   }, []);
+  const showDatePicker = () => {
+    setDatePickerVisibility(true);
+  };
+
+  const hideDatePicker = () => {
+    setDatePickerVisibility(false);
+  };
+
+  const handleConfirm = (date) => {
+    setFormState({...formState, from: moment(date).format("DD-MM-YYYY")})
+    hideDatePicker();
+  };
 
   const handleSubmit = () => {
     if (item) {
@@ -304,7 +319,7 @@ export function AddDetails({navigation, route}) {
                 />
               </View>
               <TouchableOpacity>
-                <Icon type="entypo" name="calendar" color="#fff" />
+                <Icon type="entypo" name="calendar" color="#fff" onPress={showDatePicker} />
               </TouchableOpacity>
             </View>
 
@@ -557,6 +572,12 @@ export function AddDetails({navigation, route}) {
             </View>
           </View>
         </KeyboardAwareScrollView>
+        <DateTimePickerModal
+        isVisible={isDatePickerVisible}
+        mode="date"
+        onConfirm={handleConfirm}
+        onCancel={hideDatePicker}
+      />
       </ImageBackground>
     </SafeAreaView>
   );

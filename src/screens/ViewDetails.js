@@ -246,11 +246,11 @@ export function ViewDetails({navigation}) {
                 height: height * 0.18,
                 alignItems: 'center',
                 justifyContent: 'center',
-                backgroundColor: '#8ed1fc',
+                backgroundColor: '#db3e00',
                 //  borderTopRightRadius: height * 0.03,
                 //  borderBottomLeftRadius: height * 0.03,
-                 borderRadius: 20,
-                borderColor: 'black',
+                borderRadius: 20,
+                borderColor: 'white',
                 borderWidth: 5,
               }}>
               <Text
