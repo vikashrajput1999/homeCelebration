@@ -52,7 +52,7 @@ export function HomeScreen({navigation}) {
               fontWeight: 'bold',
               color: 'white',
             }}>
-            Home Celebration
+            Time to Enjoy
           </Text>
         </TouchableOpacity>
       </View>
