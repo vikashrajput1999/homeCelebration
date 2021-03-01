@@ -161,7 +161,6 @@
 				6D9C4691A7F5E03F9B485F18 /* Pods-homeCelebration-tvOSTests.debug.xcconfig */,
 				28A636262EC680E1C21D0FE8 /* Pods-homeCelebration-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
